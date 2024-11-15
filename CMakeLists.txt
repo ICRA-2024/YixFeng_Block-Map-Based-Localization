@@ -40,7 +40,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(PCL REQUIRED)
 find_package(GTSAM REQUIRED QUIET)
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system filesystem timer)
 
 add_message_files(
   DIRECTORY msg
