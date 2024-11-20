@@ -48,6 +48,9 @@
   <build_depend>yaml-cpp</build_depend>
   <run_depend>yaml-cpp</run_depend>
 
+  <build_depend>gtsam</build_depend>
+  <run_depend>gtsam</run_depend>
+
   <export>
     <nodelet plugin="${prefix}/nodelet_plugins.xml" />
   </export>
