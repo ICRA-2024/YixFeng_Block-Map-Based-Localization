@@ -141,3 +141,21 @@ target_link_libraries(points_preprocessing_nodelet
   gtsam
   tbb
 )
+
+#---------------------------------------------------------------------------------------
+# Install
+#---------------------------------------------------------------------------------------
+
+install(TARGETS block_localization_nodelet globalmap_server_nodelet points_preprocessing_nodelet
+	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+	)
+
+install(DIRECTORY
+  launch
+  config
+  rviz
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+	)
+
