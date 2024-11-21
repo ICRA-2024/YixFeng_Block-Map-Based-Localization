@@ -156,7 +156,10 @@ install(DIRECTORY
   launch
   config
   rviz
-  FILES nodelet_plugins.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+	)
+
+install(FILES nodelet_plugins.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 	)
 
