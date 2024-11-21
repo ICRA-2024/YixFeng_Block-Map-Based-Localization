@@ -1,0 +1,13 @@
+1. Download some Block Maps from Google Drive into the folder "dataset":
+https://drive.google.com/file/d/1Z2K56jTkMOouZhM4c9JhPvqyDxGFiXSY/view?usp=drive_link
+
+2. Run container (https://github.com/ika-rwth-aachen/docker-run)
+
+docker-run --volume "$(pwd)/dataset:/dataset" \
+  ghcr.io/icra-2024/yixfeng_block-map-based-localization:latest \
+  roslaunch block_localization run_nclt.launch
+
+docker-run --volume "$(pwd)/dataset:/dataset" \
+  ghcr.io/icra-2024/yixfeng_block-map-based-localization:latest \
+  roslaunch block_localization run_m2dgr.launch
+
