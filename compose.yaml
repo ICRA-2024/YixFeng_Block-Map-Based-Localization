@@ -1,0 +1,23 @@
+services:
+  mr-zqr-liko:
+    image: ghcr.io/icra-2024/yixfeng_block-map-based-localization:latest
+    container_name: yixfeng_block-map-based-localization
+    runtime: nvidia
+    environment:
+      - LANG
+      - LANGUAGE
+      - LC_ALL=C
+      - DISPLAY=:0
+      - XAUTHORITY=/tmp/.docker.xauth.yixfeng_block-map-based-localization
+      - QT_X11_NO_MITSHM=1
+      - DOCKER_UID=${UID}
+      - DOCKER_GID=${GID}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.docker.xauth.rztmz1sw:/tmp/.docker.xauth.yixfeng_block-map-based-localization
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./dataset:/dataset
+    command: roslaunch block_localization ${LAUNCH_SCRIPT}
+
+
