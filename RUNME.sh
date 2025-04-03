@@ -37,8 +37,16 @@ fi
 export UID
 export GID=`id -g`
 
-export LAUNCH_SCRIPT=run_nclt.launch
-#export LAUNCH_SCRIPT=run_m2dgr.launch
+echo "Select launch script:"
+echo "1) run_nclt.launch"
+echo "2) run_m2dgr.launch"
+
+read n
+case $n in
+  1) export LAUNCH_SCRIPT=run_nclt.launch;;
+  2) export LAUNCH_SCRIPT=run_m2dgr.launch;;
+  *) exit 1;;
+esac
 
 docker compose up
 
